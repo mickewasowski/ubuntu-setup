@@ -54,3 +54,9 @@ map({ "n", "v" }, "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlink
 
 map({ "n", "v" }, "<leader>op", "<cmd>ObsidianPasteImg<cr>", { desc = "Paste Image" })
 
+-- Aerial
+map({"n"}, "<leader>a", "<cmd>AerialOpen float<CR>")
+
+-- Leap
+map({ "n", "x", "o" }, "s", "<Plug>(leap)")
+map("n", "S", "<Plug>(leap-from-window)")
