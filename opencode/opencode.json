@@ -9,5 +9,6 @@
     "input_backspace": "ctrl+h,backspace,shift+backspace",
     "input_delete": "delete,shift+delete",
     "editor_open": "ctrl+e"
-  }
+  },
+  "default_agent": "plan"
 }
