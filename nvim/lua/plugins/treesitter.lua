@@ -1,54 +1,58 @@
--- return {
---     "nvim-treesitter/nvim-treesitter",
---     build = ":TSUpdate",
---     config = function ()
---         local config = require("nvim-treesitter.configs")
---         config.setup({
---           auto_install = true,
---           ensure_installed = {'javascript', 'typescript', 'tsx', 'html', 'css'},
---           highlight = { enable = true },
---           indent = { enable = true },
---         })
---       end
---  }
-
--- Provides better syntax highlighting and code understanding.
-
 return {
-  {
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter",
 
-    build = ":TSUpdate",
+  branch = 'master',
 
-    dependencies = { "windwp/nvim-ts-autotag" },
+  dependencies = { "windwp/nvim-ts-autotag" },
 
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        auto_install = false,
-        ensure_installed = {
-          "bash",
-          "lua",
+  lazy = false,
 
-          "markdown",
-          "markdown_inline",
+  build = ":TSUpdate",
 
-          "html",
-          "css",
-          "javascript",
-          "typescript",
-          "tsx",
-          "json",
-        },
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      auto_install = true,
 
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end,
-  },
+      ensure_installed = {
+        "c",
+        "cpp",
+
+        "bash",
+        "diff",
+
+        "lua",
+        "vim",
+        "vimdoc",
+
+        "query",
+        "sql",
+
+        "markdown",
+        "markdown_inline",
+
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "jsdoc",
+
+        "json",
+        "csv",
+        "yaml",
+        "toml",
+
+        "glsl",
+        "hlsl",
+
+        "comment",
+      },
+
+      ignore_install = { },
+
+      highlight = {
+        enable = true
+      },
+    })
+  end,
 }
