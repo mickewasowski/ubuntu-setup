@@ -1,58 +1,58 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter",
 
-  branch = 'master',
+	branch = "master",
 
-  dependencies = { "windwp/nvim-ts-autotag" },
+	dependencies = { "windwp/nvim-ts-autotag" },
 
-  lazy = false,
+	lazy = false,
 
-  build = ":TSUpdate",
+	build = ":TSUpdate",
 
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      auto_install = true,
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			auto_install = true,
 
-      ensure_installed = {
-        "c",
-        "cpp",
+			ensure_installed = {
+				"c",
+				"cpp",
 
-        "bash",
-        "diff",
+				"bash",
+				"diff",
 
-        "lua",
-        "vim",
-        "vimdoc",
+				"lua",
+				"vim",
+				"vimdoc",
 
-        "query",
-        "sql",
+				"query",
+				"sql",
 
-        "markdown",
-        "markdown_inline",
+				"markdown",
+				"markdown_inline",
 
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "jsdoc",
+				"html",
+				"css",
+				"javascript",
+				"typescript",
+				"tsx",
+				"jsdoc",
 
-        "json",
-        "csv",
-        "yaml",
-        "toml",
+				"json",
+				"csv",
+				"yaml",
+				"toml",
 
-        "glsl",
-        "hlsl",
+				"glsl",
+				"hlsl",
 
-        "comment",
-      },
+				"comment",
+			},
 
-      ignore_install = { },
+			ignore_install = {},
 
-      highlight = {
-        enable = true
-      },
-    })
-  end,
+			highlight = {
+				enable = true,
+			},
+		})
+	end,
 }
