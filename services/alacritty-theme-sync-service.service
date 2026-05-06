@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Alacritty theme with GNOME color scheme
+
+[Service]
+ExecStart=%h/.config/alacritty/theme-sync-script.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target
