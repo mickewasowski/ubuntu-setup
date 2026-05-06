@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
-# Paths
 ALACRITTY_DIR="${HOME}/.config/alacritty"
 THEME_DIR="${ALACRITTY_DIR}/themes"
 
@@ -15,20 +13,22 @@ apply_theme_from_gnome() {
 
   scheme="$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")"
 
+  echo "GNOME color scheme: $scheme"
+
   if [[ "$scheme" == "prefer-dark" ]]; then
     ln -sfn "$DARK_THEME" "$CURRENT_LINK"
-    echo "Applied dark theme"
+    echo "Alacritty theme: dark"
   else
-    # "default" or anything unexpected
     ln -sfn "$LIGHT_THEME" "$CURRENT_LINK"
-    echo "Applied light theme"
+    echo "Alacritty theme: light"
   fi
+
+  ls -l "$CURRENT_LINK"
 }
 
-# Apply once on startup
 apply_theme_from_gnome
 
-# Watch for GNOME theme changes
-gsettings monitor org.gnome.desktop.interface color-scheme | while read -r _; do
+gsettings monitor org.gnome.desktop.interface color-scheme | while read -r line; do
+  echo "Detected change: $line"
   apply_theme_from_gnome
 done
