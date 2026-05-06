@@ -38,6 +38,21 @@ map({ "n", "v" }, "<leader>x", function()
   vim.wo.cursorline = not wrap_status
 end, { desc = "Toggle Wrap and Cursorline" })
 
+map("n", "<leader>tb", function()
+  local style = vim.o.background == "dark" and "light" or "dark"
+  vim.o.background = style
+
+  require("vscode").setup({
+    style = style,
+    transparent = false,
+    italic_comments = true,
+    disable_nvimtree_bg = true,
+    group_overrides = {},
+  })
+
+  vim.cmd.colorscheme("vscode")
+end, { desc = "Toggle Theme Background" })
+
 -- Obsidian
 map({ "n", "v" }, "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
 map({ "n", "v" }, "<leader>oh", "<cmd>ObsidianCheck<cr>", { desc = "Health" })
