@@ -38,7 +38,6 @@ map({ "n", "v" }, "<leader>x", function()
   vim.wo.cursorline = not wrap_status
 end, { desc = "Toggle Wrap and Cursorline" })
 
--- Theme toggle
 map("n", "<leader>tb", function()
   local style = vim.o.background == "dark" and "light" or "dark"
   vim.o.background = style
