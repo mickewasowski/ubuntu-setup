@@ -15,7 +15,7 @@ return {
           },
           window = {
             mappings = {
-              ["<cr>"] = "toggle_node",
+              ["<Space>"] = "toggle_node",
             },
           },
         },
