@@ -1,7 +1,8 @@
+[general]
 import = ["~/.config/alacritty/themes/current.toml"]
 
 [env]
-TERM = "xterm-256color"
+# TERM = "xterm-256color"
 
 [window]
 padding.x = 2
