@@ -38,6 +38,34 @@ map({ "n", "v" }, "<leader>x", function()
   vim.wo.cursorline = not wrap_status
 end, { desc = "Toggle Wrap and Cursorline" })
 
+map("n", "<leader>tb", function()
+  local style = vim.o.background == "dark" and "light" or "dark"
+  vim.o.background = style
+
+  require("vscode").setup({
+    style = style,
+    transparent = false,
+    italic_comments = true,
+    disable_nvimtree_bg = true,
+    group_overrides = {},
+  })
+
+  vim.cmd.colorscheme("vscode")
+end, { desc = "Toggle Theme Background" })
+
+-- Git diff (side-by-side)
+local function current_branch_diff()
+  local upstream = vim.fn.systemlist("git rev-parse --abbrev-ref --symbolic-full-name @{upstream}")[1]
+  local base = vim.v.shell_error == 0 and upstream or "origin/main"
+
+  vim.cmd("DiffviewOpen " .. base .. "...HEAD")
+end
+
+map("n", "<leader>gb", current_branch_diff, { desc = "Branch Diff" })
+map("n", "<leader>gw", "<cmd>DiffviewOpen<CR>", { desc = "Working Tree Diff" })
+map("n", "<leader>gh", "<cmd>DiffviewFileHistory %<CR>", { desc = "File History" })
+map("n", "<leader>gq", "<cmd>DiffviewClose<CR>", { desc = "Close Diffview" })
+
 -- Obsidian
 map({ "n", "v" }, "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
 map({ "n", "v" }, "<leader>oh", "<cmd>ObsidianCheck<cr>", { desc = "Health" })

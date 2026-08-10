@@ -12,7 +12,12 @@ return {
         filesystem = {
           filtered_items = {
             hide_dotfiles = false,
-          }
+          },
+          window = {
+            mappings = {
+              ["<Space>"] = "toggle_node",
+            },
+          },
         },
       window = {
     mappings = {

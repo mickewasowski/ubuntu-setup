@@ -1,0 +1,12 @@
+[Unit]
+Description=Update all git repos after login
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/custom_scripts/update_repos.sh
+WorkingDirectory=%h
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target

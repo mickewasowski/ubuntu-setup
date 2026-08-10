@@ -1,10 +1,31 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
     -- dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim', 'nvim-telescope/telescope-media-files.nvim' },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      require("telescope").setup({
+        defaults = {
+          preview = {
+            treesitter = {
+              enable = false,
+            },
+          },
+          mappings = {
+            i = {
+              ["<Esc>"] = { "<Esc>", type = "command" },
+              ["<BS>"] = { "<BS>", type = "command" },
+              ["<C-h>"] = false,
+              ["<C-c>"] = "close",
+            },
+            n = {
+              ["<Esc>"] = false,
+              ["q"] = "close",
+            },
+          },
+        },
+      })
+
       local builtin = require("telescope.builtin")
     end
   },
