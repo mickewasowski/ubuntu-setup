@@ -1,0 +1,106 @@
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+# Keep the tiling tree clean
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Default layout
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Workspaces that should always exist
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+# Gaps between windows and screen edges
+[gaps]
+inner.horizontal = 4
+inner.vertical = 4
+outer.left = 4
+outer.right = 4
+outer.top = 4
+outer.bottom = 4
+
+# Keyboard shortcuts
+[mode.main.binding]
+
+# =========================
+# WORKSPACES
+# =========================
+
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+# Move current window to workspace
+
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+
+
+# =========================
+# FOCUS WINDOWS
+# =========================
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+
+# =========================
+# MOVE WINDOWS
+# =========================
+
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+
+# =========================
+# RESIZE
+# =========================
+
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+
+# =========================
+# LAYOUT
+# =========================
+
+# Toggle between horizontal/vertical tiling
+alt-slash = 'layout tiles horizontal vertical'
+
+# Accordion layout
+alt-comma = 'layout accordion horizontal vertical'
+
+
+# =========================
+# FULLSCREEN
+# =========================
+
+alt-f = 'fullscreen'
+
+
+# =========================
+# RELOAD
+# =========================
+
+alt-shift-c = 'reload-config'
