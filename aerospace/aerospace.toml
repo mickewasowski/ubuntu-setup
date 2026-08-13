@@ -74,6 +74,20 @@ alt-shift-l = 'move right'
 
 
 # =========================
+# MOVE WINDOWS TO ANOTHER DISPLAY
+# =========================
+
+alt-shift-right = 'move-node-to-monitor right --focus-follows-window'
+alt-shift-left = 'move-node-to-monitor left --focus-follows-window'
+
+# =========================
+# MOVE FOCUS TO ANOTHER DISPLAY
+# =========================
+
+alt-right = 'focus-monitor right'
+alt-left = 'focus-monitor left'
+
+# =========================
 # RESIZE
 # =========================
 
