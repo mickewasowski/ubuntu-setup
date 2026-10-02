@@ -15,7 +15,7 @@ opacity = 0.85
 # blur = true
 
 [font]
-normal.family = "JetBrainsMono Nerd Font"
+# normal.family = "JetBrainsMono Nerd Font"
 size = 12
 
 [keyboard]
