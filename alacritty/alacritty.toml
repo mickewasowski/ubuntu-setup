@@ -1,6 +1,8 @@
 [general]
 import = ["~/.config/alacritty/themes/current.toml"]
 
+live_config_reload = true
+
 [env]
 # TERM = "xterm-256color"
 
@@ -11,7 +13,7 @@ option_as_alt = "Both"
 
 # decorations = "None"
 
-opacity = 0.85
+opacity = 0.98
 # blur = true
 
 [font]
@@ -27,3 +29,26 @@ bindings = [
   { key = "Minus", mods = "Control", action = "None" },
 ]
 
+[colors.primary]
+background = "#022D3D"
+foreground = "#D6D6D6"
+
+[colors.normal]
+black   = "#1F1F1F"
+red     = "#D75F5F"
+green   = "#6A9955"
+yellow  = "#D7B743"
+blue    = "#569CD6"
+magenta = "#B48EAD"
+cyan    = "#56B6C2"
+white   = "#D6D6D6"
+
+[colors.bright]
+black   = "#666666"
+red     = "#F44747"
+green   = "#85B36B"
+yellow  = "#E5C768"
+blue    = "#74B3E7"
+magenta = "#C8A2C8"
+cyan    = "#78C8D2"
+white   = "#FFFFFF"
